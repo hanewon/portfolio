@@ -26,10 +26,10 @@
         <input type="radio" name="slide" id="slide3">
         <input type="radio" name="slide" id="slide4">
         <ul id="imgholder" class="imgs">
-            <li><img src="/포폴/세종시 이미지/낮2.jpg"></li>
-            <li><img src="/포폴/세종시 이미지/금강보행교.jpg"></li>
-            <li><img src="/포폴/세종시 이미지/밤2.jpeg"></li>
-            <li><img src="/포폴/세종시 이미지/도서관.jpg"></li>
+            <li><img src="/img/세종 금강보행교.png"></li>
+            <li><img src="/img/세종시 호수공원.png"></li>
+            <li><img src="/img/세종 도서관.png"></li>
+            <li><img src="/img/세종 꽃.png"></li>
         </ul>
         <div class="bullets">
             <label for="slide1">&nbsp;</label>
@@ -40,36 +40,86 @@
 </header>
     <!-- 플렉스박스 썸네일 -->
     <div class="title">
-        <h2><a href="#">어울링</a></h2>
+        <h2><a href="#">마이어울링</a></h2>
     </div>
     <main class="content">
         <div class="post">
             <a href="#" class="thumbnail">사용 이력조회</a>
-            <a href="#" class="link"><img src="./img/300x200description.svg"></a>
+            <a href="#" class="link"></a>
         </div>
         <div class="post">
             <a href="#" class="thumbnail">이용권 구매</a>
-            <a href="#" class="link"><img src="./img/300x200description.svg"></a>
+            <a href="#" class="link"></a>
         </div>
         <div class="post">
             <a href="#" class="thumbnail">결제내역</a>
-            <a href="#" class="link"><img src="./img/300x200description.svg"></a>
+            <a href="#" class="link"></a>
         </div>
         <div class="post">
             <a href="#" class="thumbnail">개인정보 수정</a>
-            <a href="#" class="link"><img src="./img/300x200description.svg"></a>
+            <a href="#" class="link"></a>
         </div>
     </main>
-    <main class="map"></main>
-    <!-- <footer>
-        <div class="paging">
-            <span class="inner">
-                <a class="btn_prev no-more-prev"></i><span>이전</span></a>
-                <a class="link_page"><span class="selected">1</span></a>
-                <a href="#" class="link_page"><span>2</span></a>
-                <a href="#" class="btn_next "><span>다음</span></a>
-            </span>
+    <!-- <main class="map"></main> -->
+    <!-- <div class="layout-tab">
+        <ul class="tabs">
+            <h3>이용방법</h3>
+            <li class="tab">
+              <input type="radio" id="tab-2" name="tab-group-1" checked>
+              <label for="tab-2">이용방법</label>
+              <div class="content">
+                <article>
+                    <h2>행복도시 세종, 스마트한 공공자전거</h2>
+                    <h3>STEP1</h3>
+                    <p>‘어울링’ 앱에서 대여하기 버튼을 누른 후,
+                        자전거 뒤쪽의 QR코드를 스캔해주세요.</p>
+                    <h3>STEP2</h3>
+                    <p>대여 시작 메시지와 함께
+                        자전거의 잠금이 해제돼요.</p>
+                    <h3>STEP3</h3>
+                    <p>즐거운 자전거 운행!
+                        안전운행 하세요.</p>
+                  </article>
+              </div>
+            </li>
+            <li class="tab">
+              <input type="radio" id="tab-3" name="tab-group-1">
+              <label for="tab-3">반납방법</label>
+              <div class="content">
+                <article>
+                  <h2>즐거운 자전거 여행되셨나요?</h2>
+                  <h3>STEP1</h3>
+                  <p>대여중인 자전거를 반납할
+                    대여소로 이동해주세요.</p>
+                    <h3>STEP2</h3>
+                  <p>자전거 뒷바퀴에 있는
+                    잠금장치를 잠가주세요.</p>
+                    <h3>STEP3</h3>
+                  <p>반납 완료 메시지와 함께
+                    대여가 종료돼요.</p>
+                </article>
+              </div>
+            </li>
+        </ul>
+    </div> -->
+    
+    <div class="divmaps">
+        <div class="title2">
+            <h2>실시간 현황</h2>
         </div>
-    </footer> -->
+        <div id="map" style="width:100%;height:350px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	2b78d030fe54e9b5d0610df570c9e30f"></script>
+        <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+        
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        </script>
+    </div>
+   
 </body>
 </html>

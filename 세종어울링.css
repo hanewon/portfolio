@@ -1,16 +1,20 @@
 @charset "utf-8";
 
+*{
+    /* border: 1px solid #000; */
+}
 html, body{
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #f3f3f3;
 }
 
 /*메뉴 영역*/
 .nav{
     padding: 5px 20px;
     box-sizing: border-box;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(224, 224, 224);
 }
 /*메뉴 목록*/
 .menu{
@@ -64,8 +68,8 @@ html, body{
     width: 1550px;
     height: 600px;
     position: relative;
-    margin: 0 auto;
-    border: 2px solid black;
+    margin: 10px auto;
+    /* border: 2px solid black; */
 }
 .slider input[type=radio]{
     display: none;
@@ -86,15 +90,15 @@ ul.imgs li{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20px;
+    bottom: 10px;
     z-index: 2;
 }
 .bullets label{
     display: inline-block;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.55);
-    width: 20px;
-    height: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 10px;
+    height: 10px;
     cursor: pointer;
 }
 .slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
@@ -135,8 +139,8 @@ ul.imgs li{
 
 /* main content */
 .content{
-    max-width: 1260px; /* 한 행 에 4개의 썸네일 표시 */
-    min-height:858px;
+    max-width: 1550px; /* 한 행 에 4개의 썸네일 표시 */
+    min-height:350px;
     display: flex;
     display: --ms-flexbox; /* 인터넷 익스플로러 지원 */
     flex-wrap: wrap; /* 썸네일 행 위치 자동 배분 */
@@ -152,6 +156,7 @@ ul.imgs li{
     margin-right: 2%;
     background-color:#f6f6f6;
     box-sizing:border-box;
+    border: 1px solid #4f4444;
 }
 
 @supports (display: flex){
@@ -225,6 +230,91 @@ ul.imgs li{
     border-radius:15px;
     margin-right: 15px;
 }
+
+/* 탭박스 */
+.tabs {
+    margin: 50px auto;
+    position: relative;
+    padding: 0;
+    list-style: none;
+    min-height: 300px; /* 탭 인터페이스 전체 높이 지정 - 애니메이션에 필수 */
+    overflow: hidden; /* 탭 외곽에 위치한 나머지 탭 컨텐츠가 보이지 않도록 가림 */
+}
+.tab {
+    float: left;
+    padding: 10px 0;
+}
+.tab label { /* 탭 헤더 */
+    position: relative;
+    background: #eee;
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+}
+.tab [type="radio"] {
+    display: none;
+}
+.tab .content { /* 탭 컨텐츠 영역 */
+    position: absolute;
+    background: white;
+    top: 39px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+.tab .content > article { /* 컨텐츠 영역 프레임 유지를 위해 내부에 실제 애니메이션 블록 생성 */
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+}
+.tab [type="radio"]:checked ~ label {
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 2; /* 선택한 탭 헤더를 앞으로 옮겨서 컨텐츠 영역 테두리에 가져지지 않도록 함 */
+}
+.tab [type="radio"]:checked + label + .content {
+    z-index: 1;
+}
+.tab [type="radio"]:checked + label + .content > article { /* 실제 컨텐츠 블록 애니메이션 */
+    display: block;
+    transform: translateX(0);
+}
+
+/* 데모용 데이터 디자인 */
+.item-list{
+    display: grid;
+    grid-template-columns: 180px 180px 180px;
+    gap: 9px;
+    list-style: none;
+    padding: 0;
+}
+
+.tab:nth-child(1) .content article{
+    line-height: 0;
+}
+.tab:nth-child(2) .content article{
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+.tab:nth-child(3) .content article{
+    padding: 20px;
+}
+
+
+.divmaps{
+    width: 1550px;
+    /* height: 1200px; */
+    position: relative;
+    margin: 10px auto;
+    /* border: 2px solid black; */
+}
+.title2 { width:100%;clear:both;text-align:center;padding:30px 0;box-sizing: border-box;}
+
+
+
+
 
 
 /*반응형 모바일*/
